@@ -1,0 +1,5 @@
+server:
+  pkg: freeipa-server
+
+client:
+  pkg: freeipa-client  

@@ -1,0 +1,23 @@
+{% import_yaml "freeipa/defaults.yaml" as defaults %}
+{% import_yaml "freeipa/osmap.yaml" as osmap %}
+{% import_yaml "freeipa/codenamemap.yaml" as codemap %}
+
+{# get the settings for the os_family grain #}
+{% set osfam = salt['grains.filter_by'](osmap) or {} %}
+{# get the settings for the oscodename grain, os_family data will override
+    oscodename data #}
+
+{% set oscode = salt['grains.filter_by'](codemap,
+                                         grain='oscodename',
+                                         merge=osfam) or {} %}
+
+
+{% do defaults.freeipa.update(oscode) %}
+
+{# merge the pillar:lookup dict into the defaults/os specific dict #}
+{% set lookup = salt['pillar.get']('freeipa:lookup',
+                                   default=defaults.freeipa,
+                                   merge=True) %}
+
+{# merge the actual freeipa pillar into the above combined dict #}
+{% set freeipa = salt['pillar.get']('freeipa', default=lookup, merge=True) %}

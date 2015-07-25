@@ -2,4 +2,18 @@ freeipa:
   client:
     something: something
   server:
-    something: something
+    realm: REALM.COM
+    domain: domain.com
+    ds-password: s3cr3t
+    master-password: k3rb3r0s
+    admin-pasword: adm1n
+    hostname: server-name-here
+    ip-address: 10.11.12.13
+    configure-ntp: true
+    idstart: 123450
+    idmax: 12345000
+    hba_allow_default: true
+    redirect-to-web-ui: true
+    ssh-trust-dns: true
+    configure-ssh: true
+    configure-sshd: true
