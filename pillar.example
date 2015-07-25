@@ -1,0 +1,5 @@
+freeipa:
+  client:
+    something: something
+  server:
+    something: something
