@@ -31,6 +31,11 @@ apt-repo-sid-testing:
     - require:
       - file: apt-preferences-sid-lowpin
 
+
+freeipa-client-preinstall-curl-fix:
+  pkg.installed:
+    - name: curl
+
 # Install FreeIPA Client installer, so it can be attached afterwards
 freeipa-client-preinstall:
   pkg.installed:
