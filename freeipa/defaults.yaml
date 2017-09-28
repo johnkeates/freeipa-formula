@@ -1,5 +1,4 @@
-server:
-  pkg: freeipa-server
-
-client:
-  pkg: freeipa-client  
+freeipa:
+  client:
+    enroll:
+      automatic: false
