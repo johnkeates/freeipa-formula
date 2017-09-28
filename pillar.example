@@ -1,6 +1,8 @@
 freeipa:
   client:
-    something: something
+    enroll:
+      username: aaaa
+      password: aaaa
   server:
     realm: REALM.COM
     domain: domain.com
