@@ -3,3 +3,4 @@
 freeipa-client-enroll:
   cmd.run:
    - name: "ipa-client-install -U --enable-dns-updates --principal={{freeipa.client.enroll.username}} --password={{freeipa.client.enroll.password}}"
+   - unless: id {{freeipa.client.enroll.username}}
