@@ -1,6 +1,6 @@
 nsswitch-passwd-fixup:
   file.line:
-      - content: "passwd:         compat sss"
+      - content: "passwd:         compat sss systemd"
       - mode: replace
       - match: "passwd:         compat"
       - name: /etc/nsswitch.conf
